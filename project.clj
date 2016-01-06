@@ -8,38 +8,35 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies [
-                 [org.clojure/clojure "1.7.0-beta1"]
+                 [org.clojure/clojure "1.7.0"]
 
                  ;; Web
                  [http-kit "2.1.18"]
-                 [ring "1.3.2"]
+                 [ring "1.4.0"]
                  [ring.middleware.logger "0.5.0"]
-                 [compojure "1.3.3"]
+                 [compojure "1.4.0"]
 
                  ;; Client
-                 [org.clojure/clojurescript "0.0-3196"]
-                 [org.omcljs/om "0.8.8"]
-                 [views "1.4.0-SNAPSHOT" :exclusions [prismatic/plumbing]] ; assumes environ dependency!?
-
-                 [prismatic/om-tools "0.3.11"]
-                 [sablono "0.3.4"]
+                 [org.clojure/clojurescript "1.7.170"]
+                 [reagent "0.6.0-alpha"]
+                 [views "1.4.4" :exclusions [prismatic/plumbing]] ; assumes environ dependency!?
 
                  ;; Various Util
-                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [com.cognitect/transit-cljs "0.8.207"]
-                 [com.cognitect/transit-clj "0.8.271"]
-                 [environ "1.0.0"]
-                 [prismatic/schema "0.4.0"]
-                 [prismatic/plumbing "0.4.2"] ; ensure most current version for om-tools?
+                 [org.clojure/core.async "0.2.374"]
+                 [com.cognitect/transit-cljs "0.8.237"]
+                 [com.cognitect/transit-clj "0.8.285"]
+                 [environ "1.0.1"]
+                 [prismatic/schema "1.0.4"]
+                 [prismatic/plumbing "0.5.2"] ; ensure most current version for om-tools?
 
-                 [views/honeysql "0.1.0-SNAPSHOT"]
-                 [com.h2database/h2 "1.4.187"]
+                 [views/honeysql "0.1.2"]
+                 [com.h2database/h2 "1.4.190"]
                  ]
                
   :main http-kit-view-demo.core               
 
-  :plugins [[lein-cljsbuild "1.0.5"]
-            [environ "1.0.0"]]
+  :plugins [[lein-cljsbuild "1.1.2"]
+            [environ "1.0.1"]]
 
   :cljsbuild {
     :builds [{:id "dev"
